@@ -1,67 +1,59 @@
-# decentralizedHealth
-Hackathon-Blockchain
-DECENTRALIZED HEALT
-
-Las urgencias medicas, requieren objetividad y medidas rápidas, oportunas y eficientes.
-
-Esto jamás se llevara acabo si no se asegura el primer eslabón de la cadena.
-
-Dr. House jamás efectuará un diagnostico apropiado, ni menos aún resolverá eficientemente un caso, si no cuenta con la historia clínica actualizada, completa y compilada del paciente.
+# Dedentralized Health 
 
 La información médica está disponible, pero obtener acceso a ella, resulta difícil, lento, incluso inverificable en algunas oportunidades. El acceso a su perfil médico unificado encaja bien en la línea de frustración aceptable, donde los pacientes deben recopilar partes de sus perfiles médicos repartidos por todo el país.
 
-Problemática:
+Las soluciones actuales son poco satifactorias, tiene problematicas como la falta de conexion entre las instituciones, incongruencias entre los estandares y falta tanto de interes como voluntad por desarrollar soluciones integrales. Llevan a que tanto como los pacientes los doctores sufran de burocracia y dificultades ridiculas e inecesarias.
 
-La guardia puede ser un lugar caótico, cargado de adrenalina e intriga, donde la vida con frecuencia corre peligro y las decisiones que se toman pueden ser trascendentales.
+### ¿Por que decentralizar?
+Utilizar estructuras decentralizadas ofrecen las ventajas de ser mas robustas y ser menos vulnerables, por ende mas seguras. La cryptografia asegura que la informacion que es provista por los pacientes sea verosimil y le da a los usuarios la garantia de que esa informacion pertenece obsulutamente a ellos. Asegurando la privacidad de sensibles datos medicos.
+
+### ¿Por que IPFS?
+Es poco practico y anti-economico el almacenar grandes volumenes de datos en la blockchain de etherum. Justo, las historias clinicas, consinten en archivos que consumen grandes volumenes del mismo, con el uso de contenido visual como tomogarfias y otro tipo de estudios diagnostico.
+Por eso, utilizamos otro protocolo especializado para tal uso, IPFS, red de nodos decentralizado, que combina la tecnologias de git y bit torrent para almacenar grades cantitades de datos.  De manera segura y eficiente. 
+
+### Problemática:
 
 El médico debe de ser veraz, eficiente y oportuno. En el diagnóstico no puede fallar, el tratamiento, ni de más ni de menos. Obviamente nunca hacer daño. Y el pecado mayor de todos equivocarse. Prohibido equivocarse.
 
 A pesar del gran esfuerzo por partes de los asistentes de la salud, tan solo en EE.UU el error médico es la tercer causa de muerte, después del cáncer y enfermedades cardiovasculares.
 
-Lo que debemos busca es, disminuir el error médico y mejorar la calidad de atención, dando acceso rápido a información valiosa.
+Lo que debemos busca es, disminuir el error médico y mejorar la calidad de atención, dando acceso rápido a información valiosa. Esta información debe partir de datos escenciales y de niveles de urgencia
 
-Esta información debe partir de datos escenciales y de niveles de urgencia, acrecentándose:
+### ¿Como funciona?
 
-En un primer nivel y en carácter de urgencia debe brindarse:
+1. SmartContract 
+   - Mapping de doctores y su permiso para modificar las historias clinicas
+   - Mapping de pacientes y hash IPFS correspondiente que apunta la historia clinica almacenada.
 
-. Grupo sanguíneo
-. Medicación consumida
-. Enfermedades actuales y pasadas
-. Nombre y numero de contacto
-. ETC.
-
-De esta manera se evita que el médico en situación de emergencia, tenga que indagar por estos datos esenciales. Facilitando el diagnóstico y apresurando el tratamiento.
-
-Porque no almacenar la totalidad de la información en un único Smart contract?
-
-Resulta no solo antieconomico sino también ineficaz está práctica.
-
-3. ¿Como funciona?
-
-El médico entra a una página, ingresa la historia clínica y esta queda cargada en el IPFS. Del mismo modo requiere al paciente el hash para poder verificar su historia clínica anterior y almacenar su nueva información.
+2. IPFS.js
+   - Toma el imput file del UI y lo empuja a nodo a traves de INURA API
+   - Utilizando el address publico del paciente consulta hash en el smart contract, descarga y despliega informacion.
 
 La falta de interoperabilidad afecta a los pacientes. IPFS presenta un nuevo enfoque para la conexión de información: una posible solución para la rotura de enlaces de registros médicos.
 
-Un Napster para la salud, pero descentralizado, un compilador irrevocable, completo que simplifica la búsqueda de datos del paciente, privado pero de fácil acceso en urgencias.
+Un Napster para la salud, pero descentralizado, un compilador irrevocable, completo que simplifica la búsqueda de datos del paciente,  privado pero de fácil acceso en urgencias.  
 
-El desafío con el modelo de Napster (aparte de lo obvio que todos conocemos) era que dependía de un servidor centralizado, lo que resultó en un único punto de falla. El problema se amplió porque el servidor centralizado necesitaba tener la capacidad de cómputo adecuada para manejar todas las consultas, una configuración que podría haber dado como resultado un servicio no confiable, si no se hubiera escalado adecuadamente.
+ El desafío con el modelo de Napster (aparte de lo obvio que todos conocemos) era que dependía de un servidor centralizado, lo que resultó en un único punto de falla. El problema se amplió porque el servidor centralizado necesitaba tener la capacidad de cómputo adecuada para manejar todas las consultas, una configuración que podría haber dado como resultado un servicio no confiable, si no se hubiera escalado adecuadamente.
 
 P2P compartiendo para un mañana más saludable.
 
-Servidores centralizados generarían inseguridad, imposiblidad de contener toda la información, fragmentación, falta de objetividad
+servidores centralizados generarían inseguridad, imposiblidad de contener toda la información, fragmentación, falta de objetividad
 
 ¿Por qué eso importa? Hoy en día, una razón por la que los registros no se pueden compartir es debido a los múltiples sistemas, bases de datos y formatos en los que se almacena la información médica. Un enfoque P2P para el cuidado de la salud nos acercaría más a un registro médico unificado, accesible por sistemas heterogéneos.
 
-¿Cómo están disponibles los datos hoy en día en el pantano no estructurado de información médica? Tenemos registros individuales que necesitan hosting y flujos de medios en tiempo real para capturar. ¿Cómo se van a vincular estos conjuntos de datos masivos?IPFS o el sistema de archivos interplanetario es un sistema distribuido de IGUAL A IGUAL que conecta todas las redes utilizando el mismo sistema de archivos. Específicamente, IPFS es un protocolo de distribución de hipermedia P2P direccionable por contenido. IPFS es el protocolo para actualizar la web.
+¿Cómo están disponibles los datos hoy en día en el pantano no estructurado de información médica? Tenemos registros individuales que necesitan hosting y flujos de medios en tiempo real para capturar. ¿Cómo se van a vincular estos conjuntos de datos masivos? IPFS o el sistema de archivos interplanetario es un sistema distribuido de IGUAL A IGUAL que conecta todas las redes utilizando el mismo sistema de archivos. Específicamente, IPFS es un protocolo de distribución de hipermedia P2P direccionable por contenido. IPFS es el protocolo para actualizar la web.
 
-La aplicación de IPFS para almacenar información médica significaría no solo el eslabón de confianza con el que partirá el médico en su diagnóstico inicial de emergencia, sino que redundará en abaratamiento de costos, simplificación de trámites, derivaciones y objetivización en la necesidad de estudios y tratamientos adicionales. Esto sin duda blindará la confianza que debe haber entre los proveedores, prestadores, médicos, pacientes, cerrando las puertas del fraude en la medicina, en todos sus segmentos (medicamentos, tratamientos innecesarios, internaciones, etc.). Redirigiendo los recursos donde es necesario. Pudiendo los estados incluir mayores beneficios a quienes realmente lo necesitan.
+La aplicación de IPFS para almacenar información médica significaría no solo  el eslabón de confianza con el que partirá el médico en su diagnóstico inicial de emergencia, sino que redundará en abaratamiento de costos, simplificación de trámites, derivaciones y objetivización en la necesidad de estudios y tratamientos adicionales. Esto sin duda blindará la confianza que debe haber entre los proveedores, prestadores, médicos, pacientes, cerrando las puertas del fraude en la medicina, en todos sus segmentos (medicamentos, tratamientos innecesarios, internaciones, etc.). Redirigiendo los recursos donde es necesario. Pudiendo los estados incluir mayores beneficios a quienes realmente lo necesitan.
 
 Como anticipamos, la información es segmentada en virtud de las necesidades objetivas de contar con datos específicos. Esto se consigue mediante los hash en que el historial es comunicado a los médicos en la medida que sean necesarios. Los hash criptográficos , generaran un ID de tipo único.
-
-Universión de registro médico
 
 Cualquier cambio, actualización o modificación se enumerará en orden. Los pacientes pueden ser informados y tener acceso a cada adición a su registro médico personal, un historial médico longitudinal histórico que nunca se extravía.
 
 La atención médica experimentará así una transformación en las estructuras de datos que contienen nuestra información clínica y de pacientes. La transformación no será solo por tecnología disruptiva; será acompañado por la objetivización de la historia clínica.
-
-Hacer realidad la propuesta de Decentralized Health, seguramente reducirá los capítulos de Dr. House a 10 minutos y sus sarcasmos, pero el Hospital Universitario Princeton-Plainsboro, será mas eficiente, funcional y salvará muchas mas vidas aún.
+  
+  
+  
+  
+  
+  
+  
